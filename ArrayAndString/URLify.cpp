@@ -31,6 +31,3 @@ int main()
     cout << (urlify("a bbb c  ", 7) == "a--bbb--c") << endl;
     cout << (urlify("a c ", 3) == "a--c") << endl;
 }
-
-// What if you cannot use additional data structures?
-// ==> Sort || Brute Force

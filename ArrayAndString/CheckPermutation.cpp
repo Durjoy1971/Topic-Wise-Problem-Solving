@@ -31,6 +31,3 @@ int main()
     cout << checkPermutation("abc  ", "bac") << endl;
     cout << checkPermutation("aba", "abc") << endl;
 }
-
-// What if you cannot use additional data structures?
-// ==> Sort || Brute Force
