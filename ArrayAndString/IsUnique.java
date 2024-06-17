@@ -1,5 +1,3 @@
-// Implement an algorithm to determine if a string has all unique characters.
-
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -8,6 +6,9 @@ public class LearnCollection {
     {
         System.out.println(isUnique("abc"));
         System.out.println(isUnique("aba"));
+
+        System.out.println(isUniqueOther("abc"));
+        System.out.println(isUniqueOther("aba"));
     }
 
     static boolean isUnique(String str){
@@ -21,7 +22,18 @@ public class LearnCollection {
             if(visited.containsKey(ch)) return false;
             visited.put(ch,true);
         }
+        return true;
+    }
 
+    static boolean isUniqueOther(String str){
+        int checker = 0;
+        // Here we assume it is only for lowercase
+        for(int i = 0; i < str.length(); i++)
+        {
+            int cur = str.charAt(i) - 'a';
+            if((checker & (1 << cur)) > 0) return false;
+            checker |= (1 << cur);
+        }
         return true;
     }
 }
